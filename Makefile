@@ -1,7 +1,3 @@
-ifndef APP_ENV
-	include .env
-endif
-
 .DEFAULT_GOAL := help
 .PHONY: help
 help:
@@ -50,8 +46,8 @@ serve: ## Runs a local web server
 .PHONY: sf_console serve serve_as_sf serve_as_php
 ###< symfony/framework-bundle ###
 
-build:
-	docker-compose start
+build: ## Build the project
+	docker-compose up --build -d
 	docker-compose exec app mkdir -p var/cache var/log var/sessions vendor
 	docker-compose exec app composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader --classmap-authoritative
 	docker-compose exec app composer clear-cache
@@ -60,11 +56,14 @@ build:
 	docker-compose exec app php bin/console fixtures:load --fixtures src/DataFixtures/ORM -q
 	docker-compose stop
 
-start:
+start: ## Start application
 	docker-compose start
 	docker-compose exec app composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader --classmap-authoritative
 	docker-compose exec app composer clear-cache
 	docker-compose exec app chown -R www-data var
 
-stop:
+stop: ## Stop application
 	docker-compose stop
+
+down: ## Remove the project
+	docker-compose down --rmi local

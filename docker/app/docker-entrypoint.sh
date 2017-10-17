@@ -13,9 +13,6 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'bin/console' ]; then
         php -r "copy('$SKELETON_COMPOSER_JSON', 'composer.json');"
         composer install --prefer-dist --no-progress --no-suggest --no-interaction
     fi
-
-	# Permissions hack because setfacl does not work on Mac and Windows
-	chown -R www-data var
 fi
 
 exec docker-php-entrypoint "$@"
