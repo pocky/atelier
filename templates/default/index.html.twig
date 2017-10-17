@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for article in articles %}
+        <article>
+            <header>
+                <h2>{{ article.name }}</h2>
+                <small>Par {{ article.author.name }}, le {{ article.updatedAt|date }}</small>
+            </header>
+
+            {{ article.content }}
+        </article>
+    {% else %}
+        <div>Il n'y a pas d'articles</div>
+    {% endfor %}
+
+    <ul>
+        <li>
+            <a href="{{ url('article_index', {}, true) }}">Articles</a>
+        </li>
+        <li>
+            <a href="{{ url('author_index', {}, true) }}">Authors</a>
+        </li>
+        <li>
+            <a href="{{ url('category_index', {}, true) }}">Categories</a>
+        </li>
+    </ul>
+{% endblock %}

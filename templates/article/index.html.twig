@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Author list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Content</th>
+                <th>Author</th>
+                <th>Categories</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>
+                        <a href="{{ url('article_show', {'id': article.id}, true) }}">{{ article.id }}</a>
+                    </td>
+
+                    <td>
+                        {{ article.name }}
+                    </td>
+
+                    <td>
+                        {{ article.slug }}
+                    </td>
+
+                    <td>
+                        {{ article.content }}
+                    </td>
+
+                    <td>
+                        {{ article.author }}
+                    </td>
+
+                    <td>
+                        <ul>
+                            {% for category in article.categories %}
+                                <li>{{ category.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ url('article_edit', {'id': article.id}, true) }}">Edit</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('article_delete', {'id': article.id}, true) }}">Delete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            <ul>
+                <li>
+                    <a href="{{ url('article_new', {}, true) }}">Create a new article</a>
+                </li>
+            </ul>
+        </tbody>
+    </table>
+{% endblock %}

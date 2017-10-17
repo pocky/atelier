@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Author list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td>
+                        <a href="{{ url('author_show', {'id': author.id}, true) }}">{{ author.id }}</a>
+                    </td>
+
+                    <td>
+                        {{ author.name }}
+                    </td>
+
+                    <td>
+                        {{ author.slug }}
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ url('author_edit', {'id': author.id}, true) }}">Edit</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('author_delete', {'id': author.id}, true) }}">Delete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            <ul>
+                <li>
+                    <a href="{{ url('author_new', {}, true) }}">Create a new author</a>
+                </li>
+            </ul>
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,19 @@
+<ul>
+    <li>
+        <a href="{{ url('article_index', {}, true) }}">Back to list</a>
+    </li>
+
+    {% if not hide_edit %}
+    <li>
+        <a href="{{ url('article_edit', {'id': article.id}, true) }}">Edit</a>
+    </li>
+    {% endif %}
+
+    {% if not hide_delete %}
+    <li>
+        {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+    </li>
+    {% endif %}
+</ul>

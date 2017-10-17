@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    depends_on:
+      - db
+    volumes:
+      # Comment out the next line in production
+      - ./:/srv/app:rw
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx
+    volumes:
+      # Comment out the next line in production
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./public:/srv/app/public:ro
+    ports:
+      - '80:80'
+
+  db:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.mysql
+    volumes:
+      - ./docker/db/data:/var/lib/mysql:rw
+    healthcheck:
+      test: mysql --user=symfony --password=symfony -e "SELECT 1" symfony
+    ports:
+      - '3306:3306'

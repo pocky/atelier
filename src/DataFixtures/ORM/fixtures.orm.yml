@@ -1,0 +1,25 @@
+App\Entity\Author:
+    author_1:
+        name: John Doe
+        slug: john-doe
+    author_2:
+        name: Jane Doe
+        slug: jane-doe
+
+App\Entity\Category:
+    category_1:
+        name: john
+        slug: john
+    category_2:
+        name: jane
+        slug: jane
+
+App\Entity\Article:
+    article_{1..10}:
+        name (unique): '<text()>'
+        slug: '@self->name'
+        content: '<paragraph()>'
+        author: '@author_*'
+        categories: ['@category_1']
+        createdAt: '<dateTime()>'
+        updatedAt: '<dateTime()>'

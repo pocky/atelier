@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Category</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    {{ article.id }}
+                </td>
+
+                <td>
+                    {{ article.name }}
+                </td>
+
+                <td>
+                    {{ article.slug }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% set hide_edit, hide_delete = false, false %}
+    {{ include('article/others/record_actions.html.twig') }}
+{% endblock %}
