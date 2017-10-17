@@ -58,6 +58,7 @@ build:
 	docker-compose exec app chown -R www-data var
 	docker-compose exec app bin/console doctrine:migrations:migrate -q
 	docker-compose exec app php bin/console fixtures:load --fixtures src/DataFixtures/ORM -q
+	docker-compose stop
 
 start:
 	docker-compose start
