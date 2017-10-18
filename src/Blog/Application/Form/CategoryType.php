@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Form;
+namespace App\Blog\Application\Form;
 
-use App\Entity\Author;
+use App\Blog\Domain\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class AuthorType
+ * Class CategoryType
  */
-class AuthorType extends AbstractType
+class CategoryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -23,7 +23,7 @@ class AuthorType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Author::class,
+            'data_class' => Category::class,
         ]);
     }
 }

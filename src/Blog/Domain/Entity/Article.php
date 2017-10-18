@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Blog\Domain\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Article
  *
- * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
+ * @ORM\Entity(repositoryClass="App\Blog\Infrastructure\Persistence\ORM\ArticleRepository")
  * @ORM\Table(name="article")
  */
 class Article

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Blog\UI\Controller;
 
-use App\Entity\Article;
+use App\Blog\Domain\Entity\Article;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

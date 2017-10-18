@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Blog\UI\Controller;
 
-use App\Entity\Article;
-use App\Form\ArticleType;
+use App\Blog\Domain\Entity\Article;
+use App\Blog\Application\Form\ArticleType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

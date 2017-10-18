@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Blog\Domain\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;

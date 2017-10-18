@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Blog\UI\Controller;
 
-use App\Entity\Author;
-use App\Form\AuthorType;
+use App\Blog\Domain\Entity\Author;
+use App\Blog\Application\Form\AuthorType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

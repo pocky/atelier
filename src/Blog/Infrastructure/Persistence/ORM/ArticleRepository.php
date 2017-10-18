@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Blog\Infrastructure\Persistence\ORM;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query\Expr\OrderBy;
 
 /**
  * Class ArticleRepository

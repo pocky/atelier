@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Blog\UI\Controller;
 
-use App\Entity\Category;
-use App\Form\CategoryType;
+use App\Blog\Domain\Entity\Category;
+use App\Blog\Application\Form\CategoryType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

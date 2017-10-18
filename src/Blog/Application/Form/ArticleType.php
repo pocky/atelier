@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Form;
+namespace App\Blog\Application\Form;
 
-use App\Entity\Article;
-use App\Entity\Author;
-use App\Entity\Category;
+use App\Blog\Domain\Entity\Article;
+use App\Blog\Domain\Entity\Author;
+use App\Blog\Domain\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
