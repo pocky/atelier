@@ -19,7 +19,7 @@ class DefaultController extends Controller
     {
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->findAll();
+            ->findLastArticles();
 
         return $this->render('default/index.html.twig', [
             'articles' => $articles,
