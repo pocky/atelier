@@ -48,7 +48,7 @@ class ArticleController extends Controller
             $em->persist($article);
             $em->flush();
 
-            $this->redirectToRoute('article_show', [
+            return $this->redirectToRoute('article_show', [
                 'id' => $article->getId(),
             ]);
         }

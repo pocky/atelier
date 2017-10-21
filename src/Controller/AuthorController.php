@@ -48,7 +48,7 @@ class AuthorController extends Controller
             $em->persist($author);
             $em->flush();
 
-            $this->redirectToRoute('author_show', [
+            return $this->redirectToRoute('author_show', [
                 'id' => $author->getId(),
             ]);
         }

@@ -11,11 +11,11 @@ use Doctrine\ORM\Query\Expr\OrderBy;
  */
 class ArticleRepository extends EntityRepository
 {
-    public function findLastArticles()
+    public function findLastArticles($limit = 5)
     {
         $qb = $this->createQueryBuilder('p')
             ->orderBy('p.updatedAt', 'DESC')
-            ->setMaxResults(5)
+            ->setMaxResults($limit)
             ->getQuery();
 
         return $qb->execute();
