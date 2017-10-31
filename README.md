@@ -3,11 +3,11 @@
 ## Prérequis
 
 Docker :
-- Docker for windows
-- Docker for mac
+- Docker for Windows
+- Docker for Mac
 - Docker + docker-compose
 
-Spécifique à windows :
+Spécifique à Windows :
 - Make
 
 ## Déroulé
@@ -20,9 +20,9 @@ Spécifique à windows :
 
 ## Stack
 
-Une stack correspondante à un Symfony Standard allégé
+Une stack correspondante à un Symfony Standard allégée
 
-- Symfony 3.3.* avec Flex (sortie au mois de novembre 2017)
+- Symfony 3.3.* avec Flex (sorti au mois de novembre 2017)
 - Doctrine ORM
 - De quoi faire des fixtures et migrations
 
